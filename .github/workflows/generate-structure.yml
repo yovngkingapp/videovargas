@@ -10,21 +10,20 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     permissions:
-  contents: write
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Install StructKit
         uses: httpdss/structkit-setup@v0
-        # Esto instala StructKit en el PATH del runner[reference:2]
 
       - name: Generate structure from .structkit.yaml
         uses: httpdss/structkit-action@v0
         with:
           command: generate
           struct_file: .structkit.yaml
-          output_dir: . # Genera la estructura en la raíz del repo[reference:3]
+          output_dir: .
 
       - name: Commit and push generated files
         run: |
