@@ -1,0 +1,71 @@
+structure:
+  - name: "video-lessons-app"
+    type: directory
+    children:
+      # --- Carpeta para los videos ya renderizados (MP4) ---
+      - name: "public/videos"
+        type: directory
+        children:
+          - name: ".gitkeep"
+            type: file
+            content: ""
+      # --- Carpeta para las portadas de cada video ---
+      - name: "public/posters"
+        type: directory
+        children:
+          - name: ".gitkeep"
+            type: file
+            content: ""
+      # --- Código de la interfaz (React) ---
+      - name: "src/components"
+        type: directory
+        children:
+          - name: ".gitkeep"
+            type: file
+            content: ""
+      - name: "src/data"
+        type: directory
+        children:
+          - name: "lessons.ts"
+            type: file
+            content: |
+              // Define aquí los metadatos de cada lección:
+              // título, url del video, duración, etc.
+              export const lessons = [];
+      # --- Carpeta para las Skills de IA ---
+      - name: "skills"
+        type: directory
+        children:
+          - name: ".gitkeep"
+            type: file
+            content: ""
+      # --- Scripts para generar los videos ---
+      - name: "scripts"
+        type: directory
+        children:
+          - name: "generate-video.ts"
+            type: file
+            content: |
+              // Aquí irá el script que ejecuta la skill de IA
+              // para renderizar una lección a MP4.
+      # --- Workflows de GitHub Actions (se crea sola) ---
+      - name: ".github/workflows"
+        type: directory
+        children:
+          - name: ".gitkeep"
+            type: file
+            content: ""
+      # --- Archivos raíz básicos ---
+      - name: "README.md"
+        type: file
+        content: |
+          # Video Lessons App
+          Proyecto de lecciones en video explicativo.
+      - name: "package.json"
+        type: file
+        content: |
+          {
+            "name": "video-lessons-app",
+            "version": "1.0.0",
+            "private": true
+          }
